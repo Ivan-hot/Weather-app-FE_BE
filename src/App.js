@@ -12,7 +12,7 @@ import SignUp from "./components/signup_component";
 import UserDetails from "./components/userDetails";
 import Navbar from "./components/Navbar";
 import AdminHome from "./components/adminHome";
-import Product from "./components/products";
+import Weather from "./components/weather";
 import About from "./components/about";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -43,14 +43,14 @@ function App() {
               <>
                 <Route path="/" element={<Navigate to="/userDetails" />} />
                 <Route path="/userDetails" element={<UserDetails />} />
-                <Route path="/products" element={<Product />} />
+                <Route path="/weather" element={<Weather />} />
                 <Route path="/admin-dashboard" element={<Navigate to="/" />} />
               </>
             ) : (
               <>
                 <Route path="/" element={<Navigate to="/admin-dashboard" />} />
                 <Route path="/userDetails" element={<Navigate to="/" />} />
-                <Route path="/products" element={<Navigate to="/" />} />
+                <Route path="/weather" element={<Navigate to="/" />} />
                 <Route path="/admin-dashboard" element={<AdminHome />} />
               </>
             )}
