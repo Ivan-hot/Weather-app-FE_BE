@@ -1,0 +1,6 @@
+Username: shtepa
+Password: 16h74xnfB1gQNWGE
+16h74xnfB1gQNWGE
+
+
+mongodb+srv://shtepa:16h74xnfB1gQNWGE@weather-app.cltrc.mongodb.net/?retryWrites=true&w=majority&appName=Weather-app
