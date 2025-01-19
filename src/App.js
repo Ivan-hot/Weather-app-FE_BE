@@ -17,8 +17,11 @@ import About from "./components/about";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const isLoggedIn = window.localStorage.getItem("loggedIn"); // Check if logged in
+  const isLoggedIn = window.localStorage.getItem("loggedIn");
   const userType = window.localStorage.getItem("userType");
+  const handleOnSearchChange = (searchData) => {
+    console.log(searchData);
+  }
 
   return (
     <Router>
@@ -43,14 +46,14 @@ function App() {
               <>
                 <Route path="/" element={<Navigate to="/userDetails" />} />
                 <Route path="/userDetails" element={<UserDetails />} />
-                <Route path="/weather" element={<Weather />} />
+                <Route path="/weather" element={<Weather onSearchChange={handleOnSearchChange} />} />
                 <Route path="/admin-dashboard" element={<Navigate to="/" />} />
               </>
             ) : (
               <>
                 <Route path="/" element={<Navigate to="/admin-dashboard" />} />
                 <Route path="/userDetails" element={<Navigate to="/" />} />
-                <Route path="/weather" element={<Navigate to="/" />} />
+                <Route path="/weather" element={<Weather onSearchChange={handleOnSearchChange} />} />
                 <Route path="/admin-dashboard" element={<AdminHome />} />
               </>
             )}
