@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 
+
+
+
+.weather-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #1c8ef9;
+  color: #333;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.weather-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.weather-card {
+  display: inline-block;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 300px;
+  margin: auto;
+}
+
+
+
 * {
   box-sizing: border-box;
 }

@@ -85,7 +85,7 @@ app.post("/userData", async (req, res) => {
       return res;
     });
     console.log(user);
-    if (user == "token expired") {
+    if (user === "token expired") {
       return res.send({ status: "error", data: "token expired" });
     }
 

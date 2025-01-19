@@ -7,4 +7,6 @@ Build React Login & Register UI Template with Bootstrap 5 - Create React authent
 
 npm install react-scripts
 npm install concurrently --save-dev
+npm install react-accessible-accordion
+npm install react-select-async-paginate
 
