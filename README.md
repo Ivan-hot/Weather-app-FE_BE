@@ -6,6 +6,9 @@
 
 ```bash
 npm install
+```
+Если при запуске будут проблемы то рекомендуються индивидуально установить/обновить зависимости:
+```bash
 npm install react-scripts
 npm install concurrently --save-dev
 npm install react-accessible-accordion
