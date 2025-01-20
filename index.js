@@ -19,7 +19,8 @@ const mongoUrl =
   "mongodb+srv://shtepa:16h74xnfB1gQNWGE@weather-app.cltrc.mongodb.net/?retryWrites=true&w=majority&appName=Weather-app";
 mongoose
   .connect(mongoUrl, {
-    useNewUrlParser: true,
+    //useNewUrlParser: true,
+    //useUnifiedTopology: true
   })
   .then(() => {
     console.log("Connected to database");

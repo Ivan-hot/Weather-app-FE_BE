@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "../index.css";
 
 export default function SignUp() {
@@ -6,15 +6,9 @@ export default function SignUp() {
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("");
-  const [secretKey, setSecretKey] = useState("");
+  const [userType] = useState("");
 
   const handleSubmit = (e) => {
-    if (userType === "Admin" && secretKey !== "AdarshT") {
-      e.preventDefault();
-      alert("Invalid Admin");
-    } else {
-      e.preventDefault();
 
       console.log(fname, lname, email, password);
       fetch("http://localhost:5000/register", {
@@ -42,43 +36,13 @@ export default function SignUp() {
             alert("Something went wrong");
           }
         });
-    }
   };
 
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
-          <h3>Register</h3>
-          <div>
-            Register As
-            <input
-              type="radio"
-              name="UserType"
-              value="User"
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            User
-            <input
-              type="radio"
-              name="UserType"
-              value="Admin"
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            Admin
-          </div>
-          {userType === "Admin" ? (
-            <div className="mb-3">
-              <label>Secret Key</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Secret Key"
-                onChange={(e) => setSecretKey(e.target.value)}
-              />
-            </div>
-          ) : null}
-
+          <h3>Register</h3>      
           <div className="mb-3">
             <label>First name</label>
             <input

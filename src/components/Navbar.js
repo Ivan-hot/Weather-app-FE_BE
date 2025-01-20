@@ -21,13 +21,7 @@ function Navbar({ isLoggedIn, userType }) {
             </li>
           </>
         )}
-        {isLoggedIn && userType === "Admin" ? (
-          <li className="nav-item">
-            <Link to="/admin-dashboard" className="nav-link">
-              Dashboard
-            </Link>
-          </li>
-        ) : (
+        {(
           isLoggedIn && (
             <>
               <li className="nav-item">

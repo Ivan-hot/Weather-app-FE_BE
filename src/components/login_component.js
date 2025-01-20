@@ -1,6 +1,5 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "../App.css";
-import { Navigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,13 +30,7 @@ export default function Login() {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("userType", data.userType);
           window.localStorage.setItem("loggedIn", true);
-          
-          if (data.userType === "Admin") {
-            
-            return (window.location.href = "./admin-dashboard");
-          } else {
-            window.location.href = "./userDetails";
-          }
+          window.location.href = "./userDetails";
         }
       });
   }
