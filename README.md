@@ -141,12 +141,18 @@ http://localhost:3000/login
 2. Виберіть метод підключення (наприклад, через MongoDB Compass або за допомогою драйвера).
 3. Скопіюйте наданий URI підключення та використовуйте його у вашому додатку або клієнті.
 
-Запишіть password та username.
-замінити URL на Ваш username password та назву кластеру
-і замінити посилання у кореневому файлі index.js на ваш URL
-const mongoUrl =
-  "mongodb+srv://shtepa:16h74xnfB1gQNWGE@weather-app.cltrc.mongodb.net/?retryWrites=true&w=majority&appName=Weather-app";
+### 7. Налаштування підключення у файлі `index.js`
 
+1. Запишіть `password` та `username`.
+2. Замініть URL на ваші `username`, `password` та назву кластера.
+3. Замініть посилання у кореневому файлі `index.js` на ваш URL:
+   ```javascript
+   const mongoUrl = "mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/?retryWrites=true&w=majority&appName=YourAppName";
+   ```
 
-
-
+   Наприклад:
+   ```javascript
+   const mongoUrl = "mongodb+srv://shtepa:16h74xnfB1gQNWGE@weather-app.cltrc.mongodb.net/?retryWrites=true&w=majority&appName=Weather-app";
+   ```
+4. Запустіть npm run start або npm run start-back.
+5. Бачите в терміналі текст Connected to database - значить працює База Даних
