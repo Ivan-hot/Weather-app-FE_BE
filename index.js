@@ -15,7 +15,6 @@ const JWT_SECRET =
   "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
 
 const mongoUrl =
-  //"mongodb+srv://adarsh:adarsh@cluster0.zllye.mongodb.net/?retryWrites=true&w=majority";
   "mongodb+srv://shtepa:16h74xnfB1gQNWGE@weather-app.cltrc.mongodb.net/?retryWrites=true&w=majority&appName=Weather-app";
 mongoose
   .connect(mongoUrl, {
