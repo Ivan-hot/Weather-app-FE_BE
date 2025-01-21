@@ -14,7 +14,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Weather from "./components/Weather";
-import CurrentWeather from "./components/current-weather";
+import CurrentWeather from "./components/CurrentWeather";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./components/Api";
 import Forecast from "./components/Forecast";
 
