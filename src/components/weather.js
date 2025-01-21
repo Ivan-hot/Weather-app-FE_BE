@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GeoApiOptions } from "./api";
-import { GEO_API_URL } from "./api";
+import { GeoApiOptions } from "./Api";
+import { GEO_API_URL } from "./Api";
 
 
 const Weather = ({ onSearchChange }) => {
