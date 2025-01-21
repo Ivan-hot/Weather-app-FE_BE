@@ -28,11 +28,10 @@
   margin: auto;
 }
 
-
-
 * {
   box-sizing: border-box;
 }
+
 body {
   background: #1c8ef9 !important;
   min-height: 100vh;

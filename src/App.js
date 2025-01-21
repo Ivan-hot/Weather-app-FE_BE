@@ -14,7 +14,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Weather from "./components/Weather";
-import CurrentWeather from "./components/current-weather";
+import CurrentWeather from "./components/CurrentWeather";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./components/Api";
 import Forecast from "./components/Forecast";
 
@@ -39,7 +39,7 @@ function App() {
     const hourlyWeatherFetch = fetch(
       `${WEATHER_API_URL}/forecast/hourly?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
-   // https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
+    // https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
 
     Promise.all([currentWeatherFetch, forecastFetch, hourlyWeatherFetch])
       .then(async (response) => {
@@ -50,7 +50,6 @@ function App() {
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forcastResponse });
         setHourlyWeather({ city: searchData.label, ...hourlyWeatherResponse });
-
       })
       .catch(console.log);
   };
@@ -77,23 +76,20 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/login" element={<Navigate to="/" />} />
             <Route path="/register" element={<Navigate to="/" />} />
-              <>
-                <Route path="/" element={<Navigate to="/userDetails" />} />
-                <Route path="/userDetails" element={<UserDetails />} />
-                <Route
-                  path="/weather"
-                  element={
-                    <>
-                      <Weather onSearchChange={handleOnSearchChange} />
-                      {currentWeather && (
-                        <CurrentWeather data={currentWeather} />
-                      )}
-                      {forecast && <Forecast data={forecast} />}
-                      
-                    </>
-                  }
-                />
-              </>
+            <>
+              <Route path="/" element={<Navigate to="/userDetails" />} />
+              <Route path="/userDetails" element={<UserDetails />} />
+              <Route
+                path="/weather"
+                element={
+                  <>
+                    <Weather onSearchChange={handleOnSearchChange} />
+                    {currentWeather && <CurrentWeather data={currentWeather} />}
+                    {forecast && <Forecast data={forecast} />}
+                  </>
+                }
+              />
+            </>
           </Route>
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Navigate to="/" />} />

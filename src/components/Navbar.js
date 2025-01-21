@@ -21,22 +21,20 @@ function Navbar({ isLoggedIn, userType }) {
             </li>
           </>
         )}
-        {(
-          isLoggedIn && (
-            <>
-              <li className="nav-item">
-                <Link to="/userDetails" className="nav-link">
-                  User Details
-                </Link>
-              </li>
+        {isLoggedIn && (
+          <>
+            <li className="nav-item">
+              <Link to="/userDetails" className="nav-link">
+                User Details
+              </Link>
+            </li>
 
-              <li className="nav-item">
-                <Link to="/weather" className="nav-link">
-                  Weather
-                </Link>
-              </li>
-            </>
-          )
+            <li className="nav-item">
+              <Link to="/weather" className="nav-link">
+                Weather
+              </Link>
+            </li>
+          </>
         )}
 
         <li className="nav-item">
