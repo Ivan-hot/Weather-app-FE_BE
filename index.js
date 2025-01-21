@@ -27,10 +27,8 @@ mongoose
   .catch((e) => console.log(e));
 
 require("./userDetails");
-require("./imageDetails");
 
 const User = mongoose.model("UserInfo");
-const Images = mongoose.model("ImageDetails");
 app.post("/register", async (req, res) => {
   const { fname, lname, email, password, userType } = req.body;
 
@@ -219,24 +217,6 @@ app.post("/deleteUser", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-});
-
-app.post("/upload-image", async (req, res) => {
-  const { base64 } = req.body;
-  try {
-    await Images.create({ image: base64 });
-    res.send({ Status: "ok" });
-  } catch (error) {
-    res.send({ Status: "error", data: error });
-  }
-});
-
-app.get("/get-image", async (req, res) => {
-  try {
-    await Images.find({}).then((data) => {
-      res.send({ status: "ok", data: data });
-    });
-  } catch (error) {}
 });
 
 app.get("/paginatedUsers", async (req, res) => {

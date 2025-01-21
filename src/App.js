@@ -6,16 +6,17 @@ import {
   Navigate,
 } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import Login from "./components/LoginComponent";
-import SignUp from "./components/SignupComponent";
-import UserDetails from "./components/UserDetails";
+import "./styles/App.css";
+import Login from "./pages/LoginComponent";
+import SignUp from "./pages/SignupComponent";
+import UserDetails from "./pages/UserDetails";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
+import About from "./pages/About";
+import Weather from "./pages/Weather";
+
 import ProtectedRoute from "./components/ProtectedRoute";
-import Weather from "./components/Weather";
 import CurrentWeather from "./components/CurrentWeather";
-import { WEATHER_API_URL, WEATHER_API_KEY } from "./components/Api";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "./api/Api";
 import Forecast from "./components/Forecast";
 
 function App() {

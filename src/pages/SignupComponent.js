@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Index.css";
+import "../styles/Index.css";
 
 export default function SignUp() {
   const [fname, setFname] = useState("");

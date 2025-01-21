@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GeoApiOptions, GEO_API_URL } from "./Api";
+import { GeoApiOptions, GEO_API_URL } from "../api/Api";
 
 const Weather = ({ onSearchChange }) => {
   const [weather, setSearch] = useState(null);
