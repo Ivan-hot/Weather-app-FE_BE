@@ -5,25 +5,24 @@ import { GeoApiOptions, GEO_API_URL } from "./Api";
 const Weather = ({ onSearchChange }) => {
   const [weather, setSearch] = useState(null);
 
-const loadOptions = async (inputValue) => {
-  return fetch(
-    `${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${inputValue}`,
-    GeoApiOptions
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      return {
-        options: response.data.map((city) => {
-          return {
-            value: `${city.latitude} ${city.longitude}`,
-            label: `${city.name}, ${city.countryCode}`,
-          };
-        })
-      }
-    })
-    .catch((err) => console.error(err));
-};
-
+  const loadOptions = async (inputValue) => {
+    return fetch(
+      `${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${inputValue}`,
+      GeoApiOptions
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return {
+          options: response.data.map((city) => {
+            return {
+              value: `${city.latitude} ${city.longitude}`,
+              label: `${city.name}, ${city.countryCode}`,
+            };
+          }),
+        };
+      })
+      .catch((err) => console.error(err));
+  };
 
   const handleOnChange = (searchData) => {
     setSearch(searchData);
@@ -42,7 +41,7 @@ const loadOptions = async (inputValue) => {
       />
     </div>
   );
-}
+};
 
 export default Weather;
 

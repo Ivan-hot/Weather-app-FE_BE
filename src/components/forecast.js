@@ -7,7 +7,6 @@ import {
 } from "react-accessible-accordion";
 import "../Forecast.css";
 
-
 const WEEK_DAYS = [
   "Monday",
   "Tuesday",
@@ -50,7 +49,7 @@ const Forecast = ({ data }) => {
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-            <div className="daily-details-grid">
+              <div className="daily-details-grid">
                 <div className="daily-details-grid-item">
                   <label>Pressure:</label>
                   <label>{item.main.pressure}</label>

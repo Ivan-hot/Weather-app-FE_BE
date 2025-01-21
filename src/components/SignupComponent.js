@@ -9,40 +9,39 @@ export default function SignUp() {
   const [userType] = useState("");
 
   const handleSubmit = (e) => {
-
-      console.log(fname, lname, email, password);
-      fetch("http://localhost:5000/register", {
-        method: "POST",
-        crossDomain: true,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-          fname,
-          email,
-          lname,
-          password,
-          userType,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data, "userRegister");
-          if (data.status === "ok") {
-            alert("Registration Successful");
-          } else {
-            alert("Something went wrong");
-          }
-        });
+    console.log(fname, lname, email, password);
+    fetch("http://localhost:5000/register", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        fname,
+        email,
+        lname,
+        password,
+        userType,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.status === "ok") {
+          alert("Registration Successful");
+        } else {
+          alert("Something went wrong");
+        }
+      });
   };
 
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
-          <h3>Register</h3>      
+          <h3>Register</h3>
           <div className="mb-3">
             <label>First name</label>
             <input
