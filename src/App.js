@@ -7,16 +7,16 @@ import {
 } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Login from "./components/login_component";
-import SignUp from "./components/signup_component";
-import UserDetails from "./components/userDetails";
+import Login from "./components/LoginComponent";
+import SignUp from "./components/SignupComponent";
+import UserDetails from "./components/UserDetails";
 import Navbar from "./components/Navbar";
-import About from "./components/about";
+import About from "./components/About";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Weather from "./components/weather";
+import Weather from "./components/Weather";
 import CurrentWeather from "./components/current-weather";
-import { WEATHER_API_URL, WEATHER_API_KEY } from "./components/api";
-import Forecast from "./components/forecast";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "./components/Api";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
